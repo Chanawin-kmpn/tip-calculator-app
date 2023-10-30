@@ -1,44 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
   <title>Frontend Mentor | Tip calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
 </head>
+
 <body>
 
-  Bill
+  <div class="wrapper">
+    <header>
+      <div class="main-logo">
+        <img src="./images/logo.svg" alt="Spiltter logo">
+      </div>
+    </header>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+    <main>
 
-  Number of People
+      <section class="input-section">
+        <section class="bill-input-section">
+          <form>
+            <label for="bill" data-error="Can’t be zero">Bill</label>
+            <input type="number" name="bill" placeholder="0" id="bill-input">
+          </form>
+        </section>
 
-  Tip Amount
-  / person
+        <section class="tip-select-section">
+          <p class="section-title">Select Tip %</p>
+          <div class="tip-container">
+            <input class="tip-percent" type="button" value="5%" aria-selected="false">
+            <input class="tip-percent" type="button" value="10%" aria-selected="false">
+            <input class="tip-percent" type="button" value="15%" aria-selected="false">
+            <input class="tip-percent" type="button" value="25%" aria-selected="false">
+            <input class="tip-percent" type="button" value="50%" aria-selected="false">
+            <input class="tip-percent" type="number" placeholder="Custom" id="tip-custom">
+          </div>
+        </section>
+        <!-- nop = Number of people -->
+        <section class="nop-section">
+          <form>
+            <label for="nop" data-error="Can’t be zero">Number of People</label>
+            <input type="number" name="nop" placeholder="0" id="nop-input">
+          </form>
+        </section>
+      </section>
 
-  Total
-  / person
+      <section class="result-section" data-empty="false">
+        <div class="tip-amount-section">
+          <div class="result-card">
+            <p class="result-title">Tip Amount</p>
+            <p class="per-person">/ person</p>
+          </div>
+          <div class="result-number">
+            <span class="result-tip-amount">$0.00</span>
+          </div>
+        </div>
+        <div class="tip-total-section">
+          <div class="result-card">
+            <p class="result-title">Total</p>
+            <p class="per-person">/ person</p>
+          </div>
+          <div class="result-number">
+            <span class="result-total">$0.00</span>
+          </div>
+        </div>
 
-  Reset
-  
+        <button id="reset-btn" type="reset">Reset</button>
+      </section>
+    </main>
+  </div>
+
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
