@@ -23,20 +23,20 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
             //Looping for set attribute of tipSelected to false when the other is selected
             tipSelected.forEach(element => {
-                element.setAttribute('aria-selected', 'false');
+                element.setAttribute('data-selected', 'false');
             });
 
             //Setting attribute of tipSelected to true when tipSelected was clicked
-            tip.setAttribute('aria-selected', 'true')
+            tip.setAttribute('data-selected', 'true')
 
             //Setting selectedTipValue to store tipValue when tipSelected attribute is true and using a new event call input
-            if (tip.getAttribute('aria-selected') === 'true') {
+            if (tip.getAttribute('data-selected') === 'true') {
                 selectedTipValue = tipValue;
                 billInput.dispatchEvent(new Event('input'));
             }
 
             //Setting selectedTipValue to store tipValue when tipCustomElement attribute is true using a new event call input
-            if (tipCustomElement.getAttribute('aria-selected') === 'true') {
+            if (tipCustomElement.getAttribute('data-selected') === 'true') {
                 tipCustomElement.addEventListener('input', () => {
                     selectedTipValue = tipCustomElement.value;
                     billInput.dispatchEvent(new Event('input'));
