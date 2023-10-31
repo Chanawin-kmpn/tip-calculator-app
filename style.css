@@ -190,7 +190,7 @@ input[type="number"]::-webkit-outer-spin-button {
     background-color: hsla(173, 61%, 77%, 1);
 }
 
-.tip-percent[aria-selected="true"]:not(#tip-custom) {
+.tip-percent[data-selected="true"]:not(#tip-custom) {
     color: var(--clr-neutral-very-dark-cyan);
     background-color: var(--clr-primary-strong-cyan);
 }
