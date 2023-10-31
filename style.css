@@ -85,17 +85,17 @@ main {
 /* Bill input  and number input form setting section */
 
 form {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 0.38rem;
-    position: relative;
 }
 
 .error label::after {
     content: attr(data-error);
     position: absolute;
-    color: hsla(13, 70%, 60%, 1);
     right: 0;
+    color: hsla(13, 70%, 60%, 1);
 }
 
 label {
@@ -106,9 +106,9 @@ input {
     font-family: 'Space Mono', monospace;
     font-size: var(--fs-600);
     font-weight: var(--fw-bold);
-    outline: 2px solid var(--clr-neutral-very-light-grayish-cyan);
     border: none;
     border-radius: 0.3125rem;
+    outline: 2px solid var(--clr-neutral-very-light-grayish-cyan);
     cursor: pointer;
 }
 
@@ -158,8 +158,6 @@ input[type="number"]::-webkit-outer-spin-button {
 .error input[type="number"] {
     outline-color: hsla(13, 70%, 60%, 1);
 }
-
-
 
 /* Bill input  and number input form setting section */
 
@@ -290,14 +288,12 @@ input[type="number"]::-webkit-outer-spin-button {
         max-width: 23.7rem;
     }
 
-
-
     /* Input section */
 
     /* Tip selection section */
 
     .tip-container {
-        grid-template-columns: repeat(auto-fill, 7.31rem);
+        grid-template-columns: repeat(auto-fill, minmax(7.31rem, 1fr));
         gap: 0.88rem;
     }
 
