@@ -106,7 +106,26 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     resetBtn.addEventListener('click', () => {
         if (resetBtn.parentElement.getAttribute('data-empty') === 'true') {
-            location.reload();
+            // location.reload();
+            billInput.value = '';
+
+            // Clear tip percentage input (assuming you have an input element for custom tip)
+            document.getElementById('tip-custom').value = '';
+
+            // Clear number of people input
+            peopleInput.value = '';
+
+            // Reset selected tip value to undefined or default value
+            selectedTipValue = undefined; // or set it to your default tip value if you have one
+
+            // Reset error messages and styles
+            billInput.parentElement.classList.remove('error');
+            billInput.previousElementSibling.removeAttribute('data-error');
+            peopleInput.parentElement.classList.remove('error');
+            peopleInput.previousElementSibling.removeAttribute('data-error');
+
+            // Update the tip amount and total
+            calculateTip();
         }
     })
 })
